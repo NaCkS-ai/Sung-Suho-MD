@@ -6,13 +6,13 @@ function convertToBool(text, fault = 'true') {
 }
 
 module.exports = {
-    SESSION_ID: process.env.SESSION_ID || "",
+    SESSION_ID: process.env.SESSION_ID || "suho~g3Vg1bjb#7pBmG__2Rc3lOj3sizGS9K_n2-59YFaZuTiowVb68Fg",
     // add your Session Id make sure it starts with suho~
 
     PREFIX: process.env.PREFIX || ".",
     // add your prefix for bot
 
-    BOT_NAME: process.env.BOT_NAME || "sᴜɴɢ-sᴜʜᴏ-ᴍᴅ",
+    BOT_NAME: process.env.BOT_NAME || "HACKER A2K",
     // add bot name here for menu
 
     MODE: process.env.MODE || "public",
@@ -33,7 +33,7 @@ module.exports = {
     AUTO_STATUS_REACT: process.env.AUTO_STATUS_REACT || "true",
     // make true if you want auto reply on status 
 
-    AUTO_STATUS_MSG: process.env.AUTO_STATUS_MSG || "*sᴛᴀᴛᴜs sᴇᴇɴ ʙʏ ᴍᴇ 😆*",
+    AUTO_STATUS_MSG: process.env.AUTO_STATUS_MSG || "*SEEN YOUR STATUS*",
     // set the auto reply message on status reply  
 
     WELCOME: process.env.WELCOME || "true",
@@ -42,16 +42,16 @@ module.exports = {
     ADMIN_EVENTS: process.env.ADMIN_EVENTS || "false",
     // make true to know who dismiss or promoted a member in group
 
-    ANTI_LINK: process.env.ANTI_LINK || "true",
+    ANTI_LINK: process.env.ANTI_LINK || "false",
     // make anti link true,false for groups 
 
     MENTION_REPLY: process.env.MENTION_REPLY || "false",
     // make true if want auto voice reply if someone mention you 
 
-    MENU_IMAGE_URL: process.env.MENU_IMAGE_URL || "https://files.catbox.moe/eeeypw.jpg",
+    MENU_IMAGE_URL: process.env.MENU_IMAGE_URL || "https://files.catbox.moe/5n5fph.jpg",
     // add custom menu and mention reply image url
 
-    ALIVE_IMG: process.env.ALIVE_IMG || "https://files.catbox.moe/vcofni.jpg",
+    ALIVE_IMG: process.env.ALIVE_IMG || "https://files.catbox.moe/5n5fph.jpg",
     // add img for alive msg
 
     LIVE_MSG: process.env.LIVE_MSG || 
@@ -76,10 +76,10 @@ module.exports = {
     DELETE_LINKS: process.env.DELETE_LINKS || "false",
     // automatic delete links without removing member 
 
-    OWNER_NUMBER: process.env.OWNER_NUMBER || "27813374457",
+    OWNER_NUMBER: process.env.OWNER_NUMBER || "94765799592",
     // add your bot owner number
 
-    OWNER_NAME: process.env.OWNER_NAME || "ᴍʀ sᴜɴɢ",
+    OWNER_NAME: process.env.OWNER_NAME || "HACKER A2K",
     // add bot owner name
 
     DESCRIPTION: process.env.DESCRIPTION || "*© ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴍʀ sᴜɴɢ sᴜʜᴏ*",
@@ -103,10 +103,10 @@ module.exports = {
     AUTO_REPLY: process.env.AUTO_REPLY || "false",
     // make true or false automatic text reply 
 
-    ALWAYS_ONLINE: process.env.ALWAYS_ONLINE || "false",
+    ALWAYS_ONLINE: process.env.ALWAYS_ONLINE || "true",
     // make true for always online 
 
-    PUBLIC_MODE: process.env.PUBLIC_MODE || "false",
+    PUBLIC_MODE: process.env.PUBLIC_MODE || "true",
     // make false if want private mode
 
     AUTO_TYPING: process.env.AUTO_TYPING || "false",
