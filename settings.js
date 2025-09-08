@@ -124,7 +124,7 @@ module.exports = {
     ANTI_DEL_PATH: process.env.ANTI_DEL_PATH || "inbox",
     // change it to 'inbox' or 'same' if you want to resend deleted message in same chat 
 
-    AUTO_RECORDING: process.env.AUTO_RECORDING || "false",
+    AUTO_RECORDING: process.env.AUTO_RECORDING || "treu",
     // make it true for auto recording 
 
     version: process.env.version || "1.5.0(shadow update)"
