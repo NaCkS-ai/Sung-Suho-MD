@@ -6,7 +6,7 @@ function convertToBool(text, fault = 'true') {
 }
 
 module.exports = {
-    SESSION_ID: process.env.SESSION_ID || "",
+    SESSION_ID: process.env.SESSION_ID || "suho~grNQDZCY#R1mwyzRDwm0avc8nzG4pTpp4bDuGV_ePP6Tr2bN7ows",
     // add your Session Id make sure it starts with suho~
 
     PREFIX: process.env.PREFIX || ".",
@@ -27,7 +27,7 @@ module.exports = {
     AUTO_STATUS_SEEN: process.env.AUTO_STATUS_SEEN || "true",
     // make true or false status auto seen
 
-    AUTO_STATUS_REPLY: process.env.AUTO_STATUS_REPLY || "false",
+    AUTO_STATUS_REPLY: process.env.AUTO_STATUS_REPLY || "treu",
     // make true if you want auto reply on status 
 
     AUTO_STATUS_REACT: process.env.AUTO_STATUS_REACT || "true",
@@ -124,7 +124,7 @@ module.exports = {
     ANTI_DEL_PATH: process.env.ANTI_DEL_PATH || "inbox",
     // change it to 'inbox' or 'same' if you want to resend deleted message in same chat 
 
-    AUTO_RECORDING: process.env.AUTO_RECORDING || "false",
+    AUTO_RECORDING: process.env.AUTO_RECORDING || "treu",
     // make it true for auto recording 
 
     version: process.env.version || "1.5.0(shadow update)"
