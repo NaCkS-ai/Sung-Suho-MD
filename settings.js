@@ -48,10 +48,10 @@ module.exports = {
     MENTION_REPLY: process.env.MENTION_REPLY || "false",
     // make true if want auto voice reply if someone mention you 
 
-    MENU_IMAGE_URL: process.env.MENU_IMAGE_URL || "https://files.catbox.moe/hlbirp.jpg",
+    MENU_IMAGE_URL: process.env.MENU_IMAGE_URL || "https://files.catbox.moe/66u4mj.png",
     // add custom menu and mention reply image url
 
-    ALIVE_IMG: process.env.ALIVE_IMG || "https://files.catbox.moe/hlbirp.jpg",
+    ALIVE_IMG: process.env.ALIVE_IMG || "https://files.catbox.moe/66u4mj.png",
     // add img for alive msg
 
     LIVE_MSG: process.env.LIVE_MSG || 
@@ -61,13 +61,7 @@ module.exports = {
 
 *© ᴡʜᴀᴛꜱᴀᴘᴘ ʙᴏᴛ - ᴍᴅ*
 
-> ɢɪᴛʜᴜʙ : github.com/NaCkS-ai/SungSu-ho-MD`,
-    // add alive msg here 
-
-    STICKER_NAME: process.env.STICKER_NAME || "suho-xᴅ",
-    // type sticker pack name 
-
-    CUSTOM_REACT: process.env.CUSTOM_REACT || "false",
+> ɢɪᴛʜᴜʙ : github.com/NaCkS-ai/SungSu-ho-MD`,e",
     // make this true for custom emoji react  
 
     CUSTOM_REACT_EMOJIS: process.env.CUSTOM_REACT_EMOJIS || "💝,💖,💗,❤️‍🩹,❤️,💛,💚,💙,💜,🤎,🖤,🤍",
@@ -127,7 +121,7 @@ module.exports = {
     AUTO_RECORDING: process.env.AUTO_RECORDING || "false",
     // make it true for auto recording 
 
-    version: process.env.version || "v1.6"
+    version: process.env.version || "v2.10.0"
 
     
 };
