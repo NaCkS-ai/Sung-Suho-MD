@@ -1,0 +1,49 @@
+{
+  "name": "NOVA",
+  "description": "Powerful WhatsApp bot made by dev sung",
+  "logo": "https://files.catbox.moe/27ovis.jpg",
+  "keywords": ["bot"],
+  "success_url": "/",
+
+  "env": {
+    "SESSION_ID": {
+      "description": "Put your session-id here.",
+      "required": true
+    },
+    "OWNER_NUM": {
+      "description": "Your WhatsApp number including country code (e.g., 263XXXXXXXX).",
+      "required": true
+    },
+    "PREFIX": {
+      "description": "Command prefix (default: .)",
+      "required": false
+    },
+    "AUTO_READ_STATUS": {
+      "description": "Set to true to enable auto-read of WhatsApp statuses.",
+      "required": false
+    },
+    "AUTO_REACT_STATUS": {
+      "description": "Set to true to enable auto-reaction to statuses.",
+      "required": false
+    },
+    "AUTO_STATUS_LIKE": {
+      "description": "Set to true to enable auto-like for statuses (if supported).",
+      "required": false
+    },
+    "AUTO_RECORDING": {
+      "description": "Set to true to show recording presence when typing.",
+      "required": false
+    },
+    "Mode": {
+      "description": "Set bot mode: public / private / groups / inbox",
+      "required": true
+    }
+  },
+
+  "buildpacks": [
+    {
+      "url": "https://github.com/heroku/heroku-buildpack-nodejs.git"
+    }
+  ],
+  "stack": "heroku-24"
+}
