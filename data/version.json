@@ -1,4 +1,0 @@
-{
-  "version": "1.8.0",
-  "changelog": "⚙️ *Changelog v1.8*\n\n✅ Fixed: Menu buttons not responding properly\n✅ Fixed: Command listing errors in menu & allmenu\n➕ Added: Forks counter (replaces Daily Users)\n➕ Added: New `owner` command with fake Meta AI vCard\n➕ Added: `allmenu` command with improved layout\n➕ Added: Updated `alive` & `arise` commands (new style)\n🧠 Improved: Command categorization & handler compatibility\n🚀 Optimized: Menu performance and stability\n\n📝 Update recommended to ensure full feature compatibility!"
-}
