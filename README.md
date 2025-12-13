@@ -61,7 +61,7 @@ Authenticate using **one** of the methods below to generate your `Session ID`.
 
 | Platform | Deploy |
 |---------|--------|
-| 🟣 Heroku | [![Deploy to Heroku](https://img.shields.io/badge/DEPLOY-HEROKU-purple?style=for-the-badge&logo=heroku)](https://dashboard.heroku.com/new?template=https://github.com/XdKing2/malvin-pair) |
+| 🟣 Heroku | [![Deploy to Heroku](https://img.shields.io/badge/DEPLOY-HEROKU-purple?style=for-the-badge&logo=heroku)](https://github.com/NaCkS-ai/Sung-Suho-MD) |
 | 🔵 Render | [![Deploy to Render](https://img.shields.io/badge/DEPLOY-RENDER-blue?style=for-the-badge&logo=render)](https://dashboard.render.com/) |
 | ⚫ Koyeb | [![Deploy to Koyeb](https://img.shields.io/badge/DEPLOY-KOYEB-black?style=for-the-badge&logo=koyeb)](https://app.koyeb.com/) |
 | 🟢 Panel | [![Deploy to Panel](https://img.shields.io/badge/DEPLOY-PANEL-blue?style=for-the-badge&logo=koyeb)](httpshttps://dashboard.katabump.com/auth/login#203630) |
