@@ -20,3 +20,4 @@ module.exports = {
   ANTI_DELETE: convertToBool(process.env.ANTI_DELETE || "true"),
   version: process.env.version || "V2",
 };
+
