@@ -1,7 +1,7 @@
 {
   "name": "SUHO-MD",
   "version": "5.0.0",
-  "description": "Created By Mr Qadeer Official",
+  "description": "Created By Sung Tech Official",
   "main": "index.js",
   "scripts": {
     "start": "pm2 start index.js --deep-monitoring --attach --name SUHO-MD",
@@ -12,7 +12,7 @@
     "@whiskeysockets/baileys": "7.0.0-rc.9",
     "@adiwajshing/keyed-db": "^0.2.4",
     "@dark-yasiya/yt-dl.js": "1.0.5",
-    "@dark-yasiya/scrap":"1.0.1", 
+    "@dark-yasiya/scrap": "1.0.1",
     "@ffmpeg-installer/ffmpeg": "^1.1.0",
     "@vitalets/google-translate-api": "^9.2.1",
     "pino": "^9.5.0",
@@ -26,6 +26,7 @@
     "fs-extra": "^11.1.0",
     "ffmpeg": "^0.0.4",
     "fluent-ffmpeg": "^2.1.2",
+    "ffmpeg-static": "^5.2.0",
     "form-data": "^4.0.0",
     "google-tts-api": "^2.0.2",
     "path": "^0.12.7",
@@ -45,8 +46,9 @@
     "imagekit": "^5.1.0",
     "jimp": "latest",
     "api-dylux": "latest",
-    "@mrnima/tiktok-downloader":"1.0.0",
-    "@mrnima/facebook-downloader":"1.0.0",
-    "pm2": "^6.0.8"
+    "@mrnima/tiktok-downloader": "1.0.0",
+    "@mrnima/facebook-downloader": "1.0.0",
+    "pm2": "^6.0.8",
+    "mathjs": "^12.3.0"
   }
 }
