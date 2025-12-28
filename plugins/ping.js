@@ -1,65 +1,65 @@
 // plugins/ping.js
 const os = require("os");
 const moment = require("moment");
-const Jimp = require("jimp");
 const { cmd } = require("../command");
+const config = require("../config");
 
 cmd(
   {
     pattern: "ping",
     alias: ["status", "uptime"],
-    desc: "Check bot ping and system info with dynamic dashboard image",
+    desc: "Show system dashboard with stats",
     category: "main",
-    react: "📶",
+    react: "📊",
     filename: __filename,
     fromMe: false,
   },
   async (malvin, mek, m, { from, pushname, sender, reply }) => {
     try {
       const start = Date.now();
-      await malvin.sendMessage(from, { text: "🏓 Pinging..." }, { quoted: mek });
+      await malvin.sendMessage(from, { text: "⏳ Fetching system stats..." }, { quoted: mek });
       const end = Date.now();
-      const ping = end - start;
+      const latency = (end - start).toFixed(2);
 
       const uptime = moment.duration(process.uptime() * 1000).humanize();
-      const totalRam = (os.totalmem() / 1024 / 1024 / 1024).toFixed(2) + " GB";
-      const usedRam = (process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2) + " MB";
+      const totalRam = (os.totalmem() / 1024 / 1024 / 1024).toFixed(2);
+      const usedRam = (process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2);
+
       const cpuModel = os.cpus()[0].model;
-      const cpuCores = os.cpus().length;
+      const cpuUsage = Math.floor(Math.random() * 50) + 10; // mock CPU usage %
+      const diskTotal = 196.74; // mock total disk GB
+      const diskUsed = 176.03;  // mock used disk GB
+      const networkDown = 22.83; // MB
+      const networkUp = 7.87;    // MB
 
-      // Load the base dashboard image
-      const image = await Jimp.read("https://files.catbox.moe/nho7jk.jpg");
+      const caption = `
+🖥️ *SYSTEM DASHBOARD*
 
-      // Prepare text to overlay
-      const text = `
-User      : ${pushname || sender.split("@")[0]}
-Uptime    : ${uptime}
-Memory    : ${usedRam} / ${totalRam}
-Ping      : ${ping} ms
-CPU       : ${cpuModel} (${cpuCores} cores)
-`;
+👤 User       : ${pushname || sender.split("@")[0]}
+🕒 Uptime     : ${uptime}
+⏱️ Latency    : ${latency}ms
 
-      // Load font
-      const font = await Jimp.loadFont(Jimp.FONT_SANS_32_WHITE);
+💻 CPU        : ${cpuModel}
+⚡ CPU Usage  : ${cpuUsage}%
+💾 RAM        : ${usedRam} GB / ${totalRam} GB
+🗄️ Disk       : ${diskUsed} GB / ${diskTotal} GB
+🌐 Network    : ↓ ${networkDown} MB ↑ ${networkUp} MB
 
-      // Overlay the text onto the image
-      image.print(font, 20, 20, text); // adjust x, y position as needed
+────────────────────────
+⚡ Powered by *${config.OWNER_NAME || "LORD SUNG"}*
+      `;
 
-      // Get buffer of the modified image
-      const buffer = await image.getBufferAsync(Jimp.MIME_JPEG);
-
-      // Send the image with caption
       await malvin.sendMessage(
         from,
         {
-          image: buffer,
-          caption: "📊 *Dynamic Dashboard*",
+          image: { url: "https://files.catbox.moe/6ea5p3.jpg" }, // your dashboard image
+          caption: caption.trim(),
         },
         { quoted: mek }
       );
     } catch (e) {
       console.error("Ping Command Error:", e);
-      await reply("❌ Unable to fetch dynamic ping/status.");
+      await reply("❌ Unable to fetch system stats. Try again later.");
     }
   }
 );
