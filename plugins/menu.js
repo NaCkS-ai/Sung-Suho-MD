@@ -1,89 +1,60 @@
 // plugins/menu.js
-const { cmd, commands } = require("../command");
-const config = require("../config");
+const { cmd } = require("../command");
 
 cmd(
   {
     pattern: "menu",
     alias: ["help", "commands"],
-    react: "📜",
-    desc: "Show all bot commands by category",
-    category: "main",
-    filename: __filename,
+    desc: "Show all bot commands",
+    category: "info",
+    react: "⚡",
+    filename: __filename
   },
-  async (malvin, mek, m, { from, pushname, sender }) => {
-    try {
-      const user = pushname || sender.split("@")[0];
+  async (client, mek, m, { prefix }) => {
 
-      // Group commands by category
-      const categorized = {};
-      for (const c of commands) {
-        if (!c.pattern || c.dontAddCommandList) continue;
-        const cat = c.category || "other";
-        if (!categorized[cat]) categorized[cat] = [];
-        categorized[cat].push(c.pattern);
-      }
+    const commands = global.commands || [];
+    const grouped = {};
 
-      // Header
-      let menuText = `
-╭━━━〔 🤖 SUHO-MD V2 〕━━━╮
-┃ 👤 User   : ${user}
-┃ 👑 Owner  : 𝙇𝙊𝙍𝘿 𝙎𝙐𝙉𝙂
-┃ ⚙ Prefix : ${config.PREFIX}
-┃ 📦 Mode   : ${config.MODE}
-╰━━━━━━━━━━━━━━━━━━━━╯
-`;
-
-      // Category Emojis
-      const emojis = {
-        main: "⚙️",
-        download: "📥",
-        group: "👥",
-        fun: "🎉",
-        owner: "👑",
-        ai: "🤖",
-        anime: "🌸",
-        convert: "🎨",
-        reaction: "💫",
-        economy: "💰",
-        search: "🔎",
-        utility: "🛠️",
-        other: "🧩",
-      };
-
-      // Build menu
-      for (const [cat, list] of Object.entries(categorized)) {
-        const emoji = emojis[cat] || "✦";
-        const title = cat.toUpperCase();
-
-        menuText += `
-╭─ ${emoji} *${title}*
-`;
-
-        list.forEach(cmdName => {
-          menuText += `│ ▸ ${config.PREFIX}${cmdName}\n`;
-        });
-
-        menuText += `╰───────────────\n`;
-      }
-
-      menuText += `
-⚡ Powered by *SUHO-MD V2*
-`;
-
-      // Send menu with image
-      await malvin.sendMessage(
-        from,
-        {
-          image: { url: "https://files.catbox.moe/nho7jk.jpg" },
-          caption: menuText.trim(),
-        },
-        { quoted: mek }
-      );
-
-    } catch (e) {
-      console.error("Menu Error:", e);
-      await malvin.sendMessage(from, { text: "❌ Failed to load menu." }, { quoted: mek });
+    // Group commands by category
+    for (const c of commands) {
+      const cat = c.category || "other";
+      if (!grouped[cat]) grouped[cat] = [];
+      grouped[cat].push(c.pattern);
     }
+
+    let menu = `
+╔══════════════════════════════╗
+║      ⚡ 𝑺𝑼𝑯𝑶 – 𝑴𝑫 𝑽2 ⚡
+║   Created By 𝐋𝐎𝐑𝐃 𝐒𝐔𝐍𝐆
+╚══════════════════════════════╝
+
+👤 User: @${m.sender.split("@")[0]}
+📦 Total Commands: ${commands.length}
+
+`;
+
+    for (const cat in grouped) {
+      menu += `
+╔═══ 📂 ${cat.toUpperCase()} ═══╗
+${grouped[cat]
+  .map(cmd => `┃ ➤ ${prefix}${cmd}`)
+  .join("\n")}
+╚══════════════════════╝
+`;
+    }
+
+    menu += `
+🔥 SUHO-MD V2
+⚡ Power • Speed • Stability
+`;
+
+    await client.sendMessage(
+      mek.key.remoteJid,
+      {
+        text: menu,
+        mentions: [m.sender]
+      },
+      { quoted: mek }
+    );
   }
 );
