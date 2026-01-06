@@ -6,12 +6,12 @@
   "success_url": "/",
 
   "env": {
-    "SESSION_ID": {
+    "SESSION_ID": {HN0FmCgT#DqFBFWXLNUmuJllK_yGq1w6EBX7ei4pb_dzFRmMn77Y
       "description": "Put your session-id here.",
       "required": true
     },
     "OWNER_NUM": {
-      "description": "Your WhatsApp number including country code (e.g., 263XXXXXXXX).",
+      "description": "Your WhatsApp number including country code (e.g., 916382543912).",
       "required": true
     },
     "PREFIX": {
